@@ -169,3 +169,4 @@ pip-log.txt
 bin
 obj
 *.cbp
+*.depend

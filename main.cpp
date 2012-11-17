@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Robot.h"
 
+// Ajout d'un commentaire
+
 int main()
 {
     Robot r;
