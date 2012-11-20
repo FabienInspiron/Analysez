@@ -1,10 +1,15 @@
 #include "EtatAVide.h"
+#include "Robot.h"
 
-EtatAVide::EtatAVide(){
-    cout << "Dans le contructeur de Etat a vide";
+EtatAVide::EtatAVide(){}
+
+void EtatAVide::avancer(Robot* rob){
+    rob->setEtat(*(new EtatAVide()));
 }
 
-void EtatAVide::avancer(){
-    cout << "Je suis a vide, et je veux avancer";
-    //setEtat(aVide);
+void    EtatAVide::tourner(Robot* rob){
+    rob->setEtat(*(new EtatAVide()));
+}
+void    EtatAVide::recontrerObstacle(Robot* rob){
+    rob->setEtat(*(new EtatAVide()));
 }

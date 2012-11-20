@@ -27,11 +27,24 @@ class Robot {
 
     public :
                     Robot();
-        void        poser();
+
         void        avancer(int x, int y);
         void        avancerE(int x, int y);
+
+        void        tourner(string direct);
+        void        tournerE(string direct);
+
+        void        saisir(Objet& e);
+        void        saisirE(Objet& e);
+
+        void        poser();
+        void        poserE();
+
+        int         peser();
+
         void        setEtat(EtatR& e);
                     //~Robot();
+        Position    getPos(){return *pos;}
 
 };
 

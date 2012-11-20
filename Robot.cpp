@@ -8,11 +8,7 @@
 #include "Robot.h"
 
 Robot::Robot(){
-    cout << "Création du robot" << endl;
-
     etat = (EtatR*) new EtatAVide();
-
-    cout << "Création etat en route reussit" << endl;
 
     pos  = new Position();
     obstacle = new Obstacle();
@@ -22,20 +18,53 @@ Robot::Robot(){
 }
 
 void Robot::avancer(int x, int y){
-    cout << "Dans la méthode avancer, avant try" << endl;
     try{
-        cout << "Dans la méthode avancer de Robot" << endl;
-        etat->avancer();
+        etat->avancer(this);
         avancerE(x, y);
-    } catch (EtatR::ErreurEtat e){
-        cout << "Erreur détecter, je ne peut pas avancer" << endl;
-    }
+    } catch (EtatR::ErreurEtat e){}
 }
 
 void Robot::avancerE(int x, int y){
     pos->setx(x);
     pos->sety(y);
-    cout << "Position modifiée [x=" << x << " y= " << y <<"]";
+}
+
+void Robot::tourner(string dir){
+    try{
+        etat->tourner(this);
+        tournerE(dir);
+    } catch (EtatR::ErreurEtat e){}
+}
+
+void Robot::tournerE(string dir){
+    direction = dir;
+}
+
+void Robot::saisir(Objet& e){
+    try{
+        etat->saisir(this);
+        saisirE(e);
+    } catch (EtatR::ErreurEtat e){}
+}
+
+void Robot::saisirE(Objet& e){
+    objet = &e;
+}
+
+void Robot::poser(){
+    try{
+        etat->poser(this);
+        poserE();
+    } catch (EtatR::ErreurEtat e){}
+}
+
+void Robot::poserE(){
+    objet = NULL;
+}
+
+int Robot::peser(){
+    etat->peser(this);
+    return 2;
 }
 
 void Robot::setEtat(EtatR& e){

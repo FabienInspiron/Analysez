@@ -5,12 +5,23 @@
 #include <iostream>
 using namespace std;
 
+class Robot;
+
 class EtatR {
     public :
-        void poser();
-        virtual void avancer(){ throw ErreurEtat();}
+        virtual void poser(Robot*){ throw ErreurEtat();}
+        virtual void avancer(Robot*){ throw ErreurEtat();}
+        virtual void saisir(Robot*){ throw ErreurEtat();}
+        virtual void tourner(Robot*){ throw ErreurEtat();}
+        virtual void peser(Robot*){ throw ErreurEtat();}
+        virtual void rencontrerObstacle(Robot*){ throw ErreurEtat();}
+        virtual void figer(Robot*){ throw ErreurEtat();}
+        virtual void evaluerObstacle(Robot*){ throw ErreurEtat();}
+        virtual void repartir(Robot*){ throw ErreurEtat();}
 
-    class ErreurEtat{};
+        virtual string getEtat(){}
+
+        class ErreurEtat{};
 };
 
 #endif // ETATR_H_INCLUDED

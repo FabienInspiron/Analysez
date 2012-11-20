@@ -4,15 +4,22 @@
 #include "EtatR.h"
 
 class EtatAVide;
+class EtatAVideFO;
+class EtatEnCharge;
+class EtatEnChargeFO;
 
-class EtatEnRoute : EtatR {
+class EtatEnRoute : public EtatR {
     private :
-        //EtatEnChargeFO  enChargeFO;
-        EtatAVide       *aVide;
+        static EtatEnChargeFO  *enChargeFO;
+        static EtatAVide       *aVide;
+        static EtatEnCharge    *enCharge;
+        static EtatAVideFO     *videFO;
+
     public :
                     EtatEnRoute();
         void        figer();
-        string      getEtat();
+        string getEtat(){ return "En route";}
+
 };
 
 #endif // ETATENROUTE_H_INCLUDED
