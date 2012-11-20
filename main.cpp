@@ -11,4 +11,8 @@ int main()
     cout << "Position : x=" << r.getPos().getx() << " y=" << r.getPos().gety();
     r.avancer(10, 20);
     cout << "Position : x=" << r.getPos().getx() << " y=" << r.getPos().gety();
+
+    r.tourner("E");
+    Obstacle obs;
+    r.rencontrerObstacle(obs);
 }

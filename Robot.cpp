@@ -4,6 +4,7 @@
 #include "Objet.h"
 #include "EtatEnRoute.h"
 #include "EtatAVide.h"
+#include "EtatFiger.h"
 
 #include "Robot.h"
 
@@ -38,6 +39,7 @@ void Robot::tourner(string dir){
 
 void Robot::tournerE(string dir){
     direction = dir;
+    cout << "Tourner vers " << dir << endl;
 }
 
 void Robot::saisir(Objet& e){
@@ -63,8 +65,45 @@ void Robot::poserE(){
 }
 
 int Robot::peser(){
-    etat->peser(this);
-    return 2;
+    try{
+        etat->poser(this);
+        return peserE();
+    } catch (EtatR::ErreurEtat e){}
+}
+
+int Robot::peserE(){
+    if(objet != NULL){
+        return objet->getPoids();
+    }
+}
+
+void Robot::rencontrerObstacle(Obstacle& o){
+    try{
+        etat->rencontrerObstacle(this);
+        rencontrerObstacleE(o);
+    } catch (EtatR::ErreurEtat e){}
+}
+
+void Robot::rencontrerObstacleE(Obstacle& o){
+    obstacle = &o;
+}
+
+int Robot::evaluerOstacle(){
+    try{
+        etat->evaluerObstacle(this);
+        return evaluerOstacleE();
+    } catch (EtatR::ErreurEtat e){}
+}
+
+int Robot::evaluerOstacleE(){
+    if(obstacle != NULL){
+        return obstacle->getHauteur();
+    }
+}
+
+void Robot::figer(){
+    *Etathist = *etat;
+    etat = new EtatFiger();
 }
 
 void Robot::setEtat(EtatR& e){

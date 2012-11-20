@@ -2,10 +2,10 @@
 #define OBSTACLE_H_INCLUDED
 
 class Obstacle{
-    public :
+    private :
         int hauteur;
 
-    private :
+    public :
         int getHauteur() { return hauteur; }
 
 };

@@ -21,6 +21,7 @@ class Robot {
         int         ordreDonner;
         string      direction;
         EtatR       *etat;
+        EtatR       *Etathist;
         Position    *pos;
         Obstacle    *obstacle;
         Objet       *objet;
@@ -41,6 +42,16 @@ class Robot {
         void        poserE();
 
         int         peser();
+        int         peserE ();
+
+        void        rencontrerObstacle(Obstacle& o);
+        void        rencontrerObstacleE(Obstacle& o);
+
+        int         evaluerOstacle();
+        int         evaluerOstacleE();
+
+        void        figer();
+        void        repartir();
 
         void        setEtat(EtatR& e);
                     //~Robot();

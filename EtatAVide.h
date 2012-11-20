@@ -9,7 +9,7 @@ class EtatAVide : public EtatEnRoute {
         EtatAVide();
         void    avancer(Robot* r);
         void    tourner(Robot* r);
-        void    recontrerObstacle(Robot* r);
+        void    rencontrerObstacle(Robot* r);
 };
 
 #endif // ETATAVIDE_H_INCLUDED
