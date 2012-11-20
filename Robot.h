@@ -17,7 +17,7 @@ class Obstacle;
 class Objet;
 
 class Robot {
-    private :
+    protected :
         int         ordreDonner;
         string      direction;
         EtatR       *etat;

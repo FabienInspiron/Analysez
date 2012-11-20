@@ -102,8 +102,11 @@ int Robot::evaluerOstacleE(){
 }
 
 void Robot::figer(){
-    *Etathist = *etat;
-    etat = new EtatFiger();
+    etat->figer();
+}
+
+void Robot::repartir(){
+
 }
 
 void Robot::setEtat(EtatR& e){

@@ -15,8 +15,9 @@ class EtatR {
         virtual void tourner(Robot*){ throw ErreurEtat();}
         virtual void peser(Robot*){ throw ErreurEtat();}
         virtual void rencontrerObstacle(Robot*){ throw ErreurEtat();}
-        virtual void figer(Robot*){ throw ErreurEtat();}
         virtual void evaluerObstacle(Robot*){ throw ErreurEtat();}
+
+        virtual void figer(Robot* r);
         virtual void repartir(Robot*){ throw ErreurEtat();}
 
         virtual string getEtat(){}
