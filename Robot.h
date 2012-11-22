@@ -8,6 +8,7 @@
 #include "Obstacle.h"
 #include "Position.h"
 #include "EtatR.h"
+#include <vector>
 
 using namespace std;
 
@@ -20,14 +21,17 @@ class Robot {
     protected :
         int         ordreDonner;
         string      direction;
+
+        vector<EtatR*> etatHisto;
         EtatR       *etat;
-        EtatR       *Etathist;
+
         Position    *pos;
         Obstacle    *obstacle;
         Objet       *objet;
 
     public :
                     Robot();
+                    ~Robot();
 
         void        avancer(int x, int y);
         void        avancerE(int x, int y);
@@ -54,12 +58,10 @@ class Robot {
         void        repartir();
 
         void        setEtat(EtatR& e);
-        EtatR&		getHistEtat() { return *Etathist; }
 
         void		saveEtat();
         void 		restaureEtat();
 
-                    //~Robot();
         Position    getPos(){return *pos;}
 
 };

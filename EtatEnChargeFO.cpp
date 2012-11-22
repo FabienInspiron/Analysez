@@ -4,19 +4,26 @@
 #include "EtatEnCharge.h"
 #include "Robot.h"
 
+EtatEnChargeFO* EtatEnChargeFO::instance = NULL;
+
 EtatEnChargeFO::EtatEnChargeFO(){}
 
 void EtatEnChargeFO::poser(Robot* rob){
-    rob->setEtat(*(new EtatAVideFO()));
+	rob->setEtat(*EtatAVideFO::getInstance());
     return;
 }
 
 void EtatEnChargeFO::tourner(Robot* rob){
-    rob->setEtat(*(new EtatEnCharge()));
+	rob->setEtat(*EtatEnCharge::getInstance());
     return;
 }
 
 void EtatEnChargeFO::peser(Robot* rob){
-    rob->setEtat(*(new EtatEnChargeFO()));
+	rob->setEtat(*EtatEnChargeFO::getInstance());
     return;
+}
+
+EtatEnChargeFO* EtatEnChargeFO::getInstance(){
+	if(!instance) instance = new EtatEnChargeFO;
+	return instance;
 }

@@ -3,18 +3,25 @@
 #include "EtatEnChargeFO.h"
 #include "Robot.h"
 
+EtatAVideFO* EtatAVideFO::instance = NULL;
+
 EtatAVideFO::EtatAVideFO(){}
 
 void EtatAVideFO::evaluerObstacle(Robot* rob){
-    rob->setEtat(*(new EtatAVideFO()));
+	rob->setEtat(*EtatAVideFO::getInstance());
     return;
 }
 
 void EtatAVideFO::saisir(Robot* rob){
-    rob->setEtat(*(new EtatEnChargeFO()));
+	rob->setEtat(*EtatEnChargeFO::getInstance());
     return;
 }
 void EtatAVideFO::tourner(Robot* rob){
-    rob->setEtat(*(new EtatAVide()));
+	rob->setEtat(*EtatAVide::getInstance());
     return;
+}
+
+EtatAVideFO* EtatAVideFO::getInstance(){
+	if(!instance) instance = new EtatAVideFO;
+	return instance;
 }

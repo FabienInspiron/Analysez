@@ -12,12 +12,14 @@
 using namespace std;
 
 Robot::Robot(){
-    etat = (EtatR*) new EtatAVide();
+    etat = EtatAVide::getInstance();
 
     pos  = new Position();
     obstacle = NULL;
     objet = NULL;
 }
+
+Robot::~Robot(){}
 
 void Robot::avancer(int x, int y){
     try{
@@ -142,10 +144,10 @@ void Robot::setEtat(EtatR& e){
 }
 
 void Robot::saveEtat(){
-    Etathist = etat;
+	etatHisto.push_back(etat);
 }
 
 void Robot::restaureEtat(){
-	etat = Etathist;
+	etat = etatHisto.back();
+	etatHisto.pop_back();
 }
-

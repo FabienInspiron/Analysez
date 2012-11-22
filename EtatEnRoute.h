@@ -9,15 +9,13 @@ class EtatEnCharge;
 class EtatEnChargeFO;
 
 class EtatEnRoute : public EtatR {
-    private :
-        static EtatEnChargeFO  *enChargeFO;
-        static EtatAVide       *aVide;
-        static EtatEnCharge    *enCharge;
-        static EtatAVideFO     *videFO;
-
     public :
-                    EtatEnRoute();
-        void        figer(Robot*);
+
+						EtatEnRoute();
+		static			EtatEnRoute*		instance;
+        void        	figer(Robot*);
+
+        EtatEnRoute*	getInstance();
         string getEtat(){ return "En route";}
 
 };

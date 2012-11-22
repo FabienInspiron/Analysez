@@ -8,9 +8,11 @@ class Robot;
 class EtatFiger : public EtatR {
 
 public:
-    void repartir(Robot*);
+	static		EtatFiger*		instance;
 
-    string  getEtat()   {return "Figer";}
+    void 		repartir		(Robot*);
+    string  	getEtat			(){return "Figer";}
+    static		EtatFiger*		getInstance();
 
     class ErreurEtat{};
 };
