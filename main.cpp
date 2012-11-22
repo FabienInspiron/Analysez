@@ -6,22 +6,26 @@
 int main()
 {
     Robot r;
-    cout << "Cr�ation du robot reussit";
     r.avancer(5, 6);
-    cout << "Position : x=" << r.getPos().getx() << " y=" << r.getPos().gety();
     r.avancer(10, 20);
-    cout << "Position : x=" << r.getPos().getx() << " y=" << r.getPos().gety();
 
     r.tourner("E");
-    Obstacle obs;
-    r.rencontrerObstacle(obs);
+    Obstacle obs(10);
+    Objet O(5);
 
-    cout << "Robot figé" << endl;
-    r.figer();
-    cout << "Robot tourne" << endl;
-    r.tourner("O");
-    cout << "Robot repart" << endl;
-    r.repartir();
-    cout << "Robot peser" << endl;
+    r.rencontrerObstacle(obs);
     r.peser();
+
+    r.figer();
+    r.tourner("O");
+    r.avancer(10, 20);
+    r.repartir();
+
+    cout << "Hauteur de l'obstacle " << r.evaluerOstacle() << endl;
+    r.saisir(O);
+    cout << "Poids de l'objet : " << r.peser() << endl;
+    r.avancer(10, 59);
+    r.tourner("N");
+
+    return 0;
 }

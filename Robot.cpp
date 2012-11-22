@@ -15,22 +15,23 @@ Robot::Robot(){
     etat = (EtatR*) new EtatAVide();
 
     pos  = new Position();
-    obstacle = new Obstacle();
-    objet = new Objet();
-
-    cout << "Appr�s cr�ation du robot" << endl;
+    obstacle = NULL;
+    objet = NULL;
 }
 
 void Robot::avancer(int x, int y){
     try{
         etat->avancer(this);
         avancerE(x, y);
-    } catch (EtatR::ErreurEtat e){}
+    } catch (EtatR::ErreurEtat e){
+    	cout << "!! Ne peut pas avancer !!" << endl;
+    }
 }
 
 void Robot::avancerE(int x, int y){
     pos->setx(x);
     pos->sety(y);
+    cout << "Nouvelle position [x=" << x << ",y=" << y << "]" <<endl;
 }
 
 void Robot::tourner(string dir){
@@ -51,7 +52,9 @@ void Robot::saisir(Objet& e){
     try{
         etat->saisir(this);
         saisirE(e);
-    } catch (EtatR::ErreurEtat e){}
+    } catch (EtatR::ErreurEtat e){
+    	cout << "!! Ne peut pas saisir !!" << endl;
+    }
 }
 
 void Robot::saisirE(Objet& e){
@@ -62,7 +65,9 @@ void Robot::poser(){
     try{
         etat->poser(this);
         poserE();
-    } catch (EtatR::ErreurEtat e){}
+    } catch (EtatR::ErreurEtat e){
+    	cout << "!! Ne peut pas poser !!" << endl;
+    }
 }
 
 void Robot::poserE(){
@@ -74,7 +79,7 @@ int Robot::peser(){
         etat->peser(this);
         return peserE();
     } catch (EtatR::ErreurEtat e){
-    	cout << "Ne peut pas peser" << endl;
+    	cout << "!! Ne peut pas peser !!" << endl;
     }
     return -1;
 }
@@ -90,7 +95,9 @@ void Robot::rencontrerObstacle(Obstacle& o){
     try{
         etat->rencontrerObstacle(this);
         rencontrerObstacleE(o);
-    } catch (EtatR::ErreurEtat e){}
+    } catch (EtatR::ErreurEtat e){
+    	cout << "!! Ne peut pas rencontrer obstacle !!" << endl;
+    }
 }
 
 void Robot::rencontrerObstacleE(Obstacle& o){
@@ -101,7 +108,9 @@ int Robot::evaluerOstacle(){
     try{
         etat->evaluerObstacle(this);
         return evaluerOstacleE();
-    } catch (EtatR::ErreurEtat e){}
+    } catch (EtatR::ErreurEtat e){
+    	cout << "!! Ne peut pas evaluer obstacle !!" << endl;
+    }
     return -1;
 }
 
@@ -113,11 +122,19 @@ int Robot::evaluerOstacleE(){
 }
 
 void Robot::figer(){
-    etat->figer(this);
+	try{
+		etat->figer(this);
+	}catch (EtatR::ErreurEtat e){
+		cout << "!! Ne peut pas se figer !!" << endl;
+	}
 }
 
 void Robot::repartir(){
-	etat->repartir(this);
+	try{
+		etat->repartir(this);
+	}catch (EtatR::ErreurEtat e){
+		cout << "!! Ne peut pas repartir !!" << endl;
+	}
 }
 
 void Robot::setEtat(EtatR& e){
@@ -125,6 +142,10 @@ void Robot::setEtat(EtatR& e){
 }
 
 void Robot::saveEtat(){
-    *Etathist = *etat;
+    Etathist = etat;
+}
+
+void Robot::restaureEtat(){
+	etat = Etathist;
 }
 

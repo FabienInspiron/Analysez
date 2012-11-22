@@ -9,16 +9,16 @@ class Robot;
 
 class EtatR {
     public :
-        virtual void poser(Robot*){ throw ErreurEtat();}
-        virtual void avancer(Robot*){ throw ErreurEtat();}
-        virtual void saisir(Robot*){ throw ErreurEtat();}
-        virtual void tourner(Robot*){ throw ErreurEtat();}
-        virtual void peser(Robot*){ throw ErreurEtat();}
-        virtual void rencontrerObstacle(Robot*){ throw ErreurEtat();}
-        virtual void evaluerObstacle(Robot*){ throw ErreurEtat();}
+        virtual void poser(Robot*)				{ throw ErreurEtat();}
+        virtual void avancer(Robot*)			{ throw ErreurEtat();}
+        virtual void saisir(Robot*)				{ throw ErreurEtat();}
+        virtual void tourner(Robot*)			{ throw ErreurEtat();}
+        virtual void peser(Robot*)				{ throw ErreurEtat();}
+        virtual void rencontrerObstacle(Robot*)	{ throw ErreurEtat();}
+        virtual void evaluerObstacle(Robot*)	{ throw ErreurEtat();}
 
-        virtual void figer(Robot* r) { throw ErreurEtat();}
-        virtual void repartir(Robot*){ throw ErreurEtat();}
+        virtual void figer(Robot* r) 			{ throw ErreurEtat();}
+        virtual void repartir(Robot*)			{ throw ErreurEtat();}
 
         virtual string getEtat(){ return "";}
 

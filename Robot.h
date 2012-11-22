@@ -55,7 +55,10 @@ class Robot {
 
         void        setEtat(EtatR& e);
         EtatR&		getHistEtat() { return *Etathist; }
+
         void		saveEtat();
+        void 		restaureEtat();
+
                     //~Robot();
         Position    getPos(){return *pos;}
 

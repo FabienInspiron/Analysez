@@ -6,6 +6,7 @@ class Obstacle{
         int hauteur;
 
     public :
+        Obstacle(int hau) : hauteur(hau){};
         int getHauteur() { return hauteur; }
 
 };

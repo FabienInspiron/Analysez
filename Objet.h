@@ -6,6 +6,7 @@ class Objet{
         int poids;
 
     public :
+        Objet(int pds) : poids(pds){}
         int getPoids(){return poids;}
 };
 
