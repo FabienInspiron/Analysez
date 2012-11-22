@@ -1,3 +1,4 @@
+#include <iostream>
 #include "EtatR.h"
 #include "Position.h"
 #include "Obstacle.h"
@@ -7,6 +8,8 @@
 #include "EtatFiger.h"
 
 #include "Robot.h"
+
+using namespace std;
 
 Robot::Robot(){
     etat = (EtatR*) new EtatAVide();
@@ -34,7 +37,9 @@ void Robot::tourner(string dir){
     try{
         etat->tourner(this);
         tournerE(dir);
-    } catch (EtatR::ErreurEtat e){}
+    } catch (EtatR::ErreurEtat e){
+    	cout << "!! Ne peut pas tourner !!" << endl;
+    }
 }
 
 void Robot::tournerE(string dir){
@@ -66,9 +71,11 @@ void Robot::poserE(){
 
 int Robot::peser(){
     try{
-        etat->poser(this);
+        etat->peser(this);
         return peserE();
-    } catch (EtatR::ErreurEtat e){}
+    } catch (EtatR::ErreurEtat e){
+    	cout << "Ne peut pas peser" << endl;
+    }
     return -1;
 }
 
@@ -116,3 +123,8 @@ void Robot::repartir(){
 void Robot::setEtat(EtatR& e){
     etat = &e;
 }
+
+void Robot::saveEtat(){
+    *Etathist = *etat;
+}
+

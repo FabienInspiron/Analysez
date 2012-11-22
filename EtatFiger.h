@@ -1,18 +1,14 @@
 #ifndef ETATFIGER_H_INCLUDED
 #define ETATFIGER_H_INCLUDED
 
+#include "EtatR.h"
+
+class Robot;
+
 class EtatFiger : public EtatR {
 
-    void poser(Robot*){ throw ErreurEtat();}
-    void avancer(Robot*){ throw ErreurEtat();}
-    void saisir(Robot*){ throw ErreurEtat();}
-    void tourner(Robot*){ throw ErreurEtat();}
-    void peser(Robot*){ throw ErreurEtat();}
-    void rencontrerObstacle(Robot*){ throw ErreurEtat();}
-    void evaluerObstacle(Robot*){ throw ErreurEtat();}
-
-    virtual void figer(Robot*){throw ErreurEtat();}
-    virtual void repartir(Robot*){ throw ErreurEtat();}
+public:
+    void repartir(Robot*);
 
     string  getEtat()   {return "Figer";}
 

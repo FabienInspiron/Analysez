@@ -17,7 +17,7 @@ class EtatEnRoute : public EtatR {
 
     public :
                     EtatEnRoute();
-        void        figer();
+        void        figer(Robot*);
         string getEtat(){ return "En route";}
 
 };
