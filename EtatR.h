@@ -17,10 +17,10 @@ class EtatR {
         virtual void rencontrerObstacle(Robot*){ throw ErreurEtat();}
         virtual void evaluerObstacle(Robot*){ throw ErreurEtat();}
 
-        virtual void figer(Robot* r);
+        virtual void figer(Robot* r) { throw ErreurEtat();}
         virtual void repartir(Robot*){ throw ErreurEtat();}
 
-        virtual string getEtat(){}
+        virtual string getEtat(){ return "";}
 
         class ErreurEtat{};
 };

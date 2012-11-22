@@ -15,7 +15,7 @@ Robot::Robot(){
     obstacle = new Obstacle();
     objet = new Objet();
 
-    cout << "Apprès création du robot" << endl;
+    cout << "Apprï¿½s crï¿½ation du robot" << endl;
 }
 
 void Robot::avancer(int x, int y){
@@ -69,12 +69,14 @@ int Robot::peser(){
         etat->poser(this);
         return peserE();
     } catch (EtatR::ErreurEtat e){}
+    return -1;
 }
 
 int Robot::peserE(){
     if(objet != NULL){
         return objet->getPoids();
     }
+    return -1;
 }
 
 void Robot::rencontrerObstacle(Obstacle& o){
@@ -93,20 +95,22 @@ int Robot::evaluerOstacle(){
         etat->evaluerObstacle(this);
         return evaluerOstacleE();
     } catch (EtatR::ErreurEtat e){}
+    return -1;
 }
 
 int Robot::evaluerOstacleE(){
     if(obstacle != NULL){
         return obstacle->getHauteur();
     }
+	return -1;
 }
 
 void Robot::figer(){
-    etat->figer();
+    etat->figer(this);
 }
 
 void Robot::repartir(){
-
+	etat->repartir(this);
 }
 
 void Robot::setEtat(EtatR& e){
