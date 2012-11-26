@@ -1,11 +1,14 @@
 #include <iostream>
 #include "Robot.h"
+#include "AfficheurText.h"
 
 // Ajout d'un commentaire
 
 int main()
 {
 	Robot r;
+	AfficheurText aft;
+	r.attacherAfficheur(aft);
     r.avancer(5, 6);
     r.avancer(10, 20);
 

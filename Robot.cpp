@@ -11,7 +11,7 @@
 
 using namespace std;
 
-Robot::Robot(){
+Robot::Robot() : ElementARepresenter() {
     etat = EtatAVide::getInstance();
 
     pos  = new Position();
@@ -40,6 +40,7 @@ void Robot::tourner(string dir){
     try{
         etat->tourner(this);
         tournerE(dir);
+        notifier(this);
     } catch (EtatR::ErreurEtat e){
     	cout << "!! Ne peut pas tourner !!" << endl;
     }
@@ -141,6 +142,10 @@ void Robot::repartir(){
 
 void Robot::setEtat(EtatR& e){
     etat = &e;
+}
+
+string Robot::getEtat() {
+	return etat->getEtat();
 }
 
 void Robot::saveEtat(){
