@@ -23,7 +23,6 @@ class Robot : public ElementARepresenter {
         int         ordreDonner;
         string      direction;
 
-        vector<EtatR*> etatHisto;
         EtatR       *etat;
 
         Position    *pos;
@@ -59,10 +58,8 @@ class Robot : public ElementARepresenter {
         void        repartir();
 
         void        setEtat(EtatR& e);
-        string 		getEtat();
-
-        void		saveEtat();
-        void 		restaureEtat();
+        EtatR& 		getEtat();
+        string		getStringEtat();
 
         Position    getPos(){return *pos;}
 

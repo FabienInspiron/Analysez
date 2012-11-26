@@ -14,6 +14,7 @@ class EtatAVide : public EtatEnRoute {
         void    	tourner(Robot* r);
         void    	rencontrerObstacle(Robot* r);
         static EtatAVide* getInstance();
+        string
 };
 
 #endif // ETATAVIDE_H_INCLUDED

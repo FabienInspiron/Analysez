@@ -16,7 +16,7 @@ using namespace std;
 class AfficheurText: public Afficheur {
 public:
 	void afficher(Robot *r) {
-		cout << "Etat: " << r->getEtat() << endl;
+		cout << "Etat: " << r->getStringEtat() << endl;
 	}
 };
 
