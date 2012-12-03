@@ -15,6 +15,7 @@ public:
 	Console();
 	static int getint(string message){cout << message<< ": " ; int v; cin >> v; return v;}
 	static string getString(string message){cout << message<< ": " ; string v; cin >> v; return v;}
+	static string getCommandes();
 	virtual ~Console();
 };
 

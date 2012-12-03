@@ -6,12 +6,21 @@
  */
 
 #include "Console.h"
+#include <map>
+#include "CommandeRobot.h"
+#include <iostream>
+using namespace std;
 
-Console::Console() {
-	// TODO Auto-generated constructor stub
 
-}
+Console::Console() {}
 
-Console::~Console() {
-	// TODO Auto-generated destructor stub
+Console::~Console() {}
+
+string Console::getCommandes() {
+	string retour;
+	map<string,CommandeRobot*>::const_iterator
+	    mit (CommandeRobot::CommandesInscrites.begin()),
+	    mend(CommandeRobot::CommandesInscrites.end());
+	 for(;mit!=mend;++mit) retour += mit->first + "\n";
+	return retour;
 }

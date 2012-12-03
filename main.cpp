@@ -3,6 +3,7 @@
 #include "AfficheurText.h"
 #include "Commande.h"
 #include "CommandeRobot.h"
+#include "Console.h"
 
 // Ajout d'un commentaire
 
@@ -14,12 +15,16 @@ int main()
 	AfficheurText aft;
 	r.attacherAfficheur(aft);
 
-	string commandeString;
-	cout << "Que faire ? : ";
-	cin >> commandeString;
+	cout << Console::getCommandes();
 
-	Commande *com =  CommandeRobot::nouvelleCommandeRobot(commandeString, r);
-	com->execute();
+	while(1){
+		string commandeString;
+		cout << "Que faire ? : ";
+		cin >> commandeString;
+
+		Commande *com =  CommandeRobot::nouvelleCommandeRobot(commandeString, r);
+		com->execute();
+	}
 
 	/*
 	r.avancer(5, 6);
@@ -51,5 +56,5 @@ int main()
     r.tourner("N");
 
     return 0;
-    */
+	 */
 }

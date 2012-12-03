@@ -26,6 +26,7 @@ public:
 
 	static CommandeRobot* nouvelleCommandeRobot(string r, Robot& rob);
 	virtual CommandeRobot* constructeurVirtuel(Robot&){};
+	static bool inMap(string);
 };
 
 #endif /* COMMANDEROBOT_H_ */
