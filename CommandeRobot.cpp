@@ -7,16 +7,19 @@
 
 #include "CommandeRobot.h"
 #include <iostream>
+#include "Avancer.h"
+#include "Tourner.h"
 using namespace std;
 
 map<string, CommandeRobot*> CommandeRobot::CommandesInscrites;
+Avancer Avancer::instance("AVANCER");
+Tourner Tourner::instance("TOURNER");
 
 CommandeRobot* CommandeRobot::nouvelleCommandeRobot(string s, Robot& rob){
 	return CommandesInscrites[s]->constructeurVirtuel(rob);
 }
 
 CommandeRobot::CommandeRobot(string d) {
-	cout << "Ajout de " << d << endl;
 	CommandesInscrites[d] = this;
 }
 

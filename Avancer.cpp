@@ -12,8 +12,7 @@ using namespace std;
 #include "Robot.h"
 #include "CommandeRobot.h"
 #include "Console.h"
-
-Avancer Avancer::instance("AVANCER");
+#include "Tourner.h"
 
 Avancer::Avancer(string s) : CommandeRobot(s) {}
 

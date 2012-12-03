@@ -11,8 +11,6 @@
 #include "Avancer.h"
 #include "Tourner.h"
 
-Tourner Tourner::instance("TOURNER");
-
 Tourner::Tourner(string s) : CommandeRobot(s) {}
 
 Tourner::Tourner(Robot& rob) : CommandeRobot(rob) {}

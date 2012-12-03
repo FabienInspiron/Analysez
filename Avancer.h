@@ -14,7 +14,6 @@ private:
 	int x;
 	int y;
 
-
 public:
 	static Avancer instance;
 
