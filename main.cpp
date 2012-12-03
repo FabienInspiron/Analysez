@@ -1,15 +1,28 @@
 #include <iostream>
 #include "Robot.h"
 #include "AfficheurText.h"
+#include "Commande.h"
+#include "CommandeRobot.h"
 
 // Ajout d'un commentaire
 
 int main()
 {
 	Robot r;
+	string ligne;
+
 	AfficheurText aft;
 	r.attacherAfficheur(aft);
-    r.avancer(5, 6);
+
+	string commandeString;
+	cout << "Que faire ? : ";
+	cin >> commandeString;
+
+	Commande *com =  CommandeRobot::nouvelleCommandeRobot(commandeString, r);
+	com->execute();
+
+	/*
+	r.avancer(5, 6);
     r.avancer(10, 20);
 
     r.tourner("E");
@@ -38,4 +51,5 @@ int main()
     r.tourner("N");
 
     return 0;
+    */
 }

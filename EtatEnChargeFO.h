@@ -11,7 +11,7 @@ class EtatEnChargeFO : public EtatEnRoute {
         void    peser               (Robot* r);
         void    tourner             (Robot* r);
         static 	EtatEnChargeFO*	getInstance	();
-        virtual string getEtat() { return base->getEtat() + "test";}
+        virtual string getEtat() { return (EtatEnRoute::getEtat() + "test");}
 
 };
 
