@@ -9,7 +9,7 @@
 #include <list>
 #include "ElementARepresenter.h"
 #include "Afficheur.h"
-#include "Robot.h"
+#include "../Robot.h"
 using namespace std;
 
 void ElementARepresenter::attacherAfficheur(Afficheur &a) {

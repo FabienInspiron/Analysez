@@ -2,7 +2,7 @@
 #include "EtatAVide.h"
 #include "EtatEnChargeFO.h"
 #include "EtatEnCharge.h"
-#include "Robot.h"
+#include "../Robot.h"
 
 EtatEnCharge* EtatEnCharge::instance = NULL;
 

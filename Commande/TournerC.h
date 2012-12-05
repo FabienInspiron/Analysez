@@ -9,19 +9,19 @@
 #define TOURNER_H_
 #include "CommandeRobot.h"
 
-class Tourner : public CommandeRobot{
+class TournerC : public CommandeRobot{
 private :
 	string direction;
 
 public:
-	static Tourner instance;
+	static TournerC instance;
 
-	Tourner(Robot&);
-	Tourner(string);
+	TournerC(Robot&);
+	TournerC(string);
 
 	void execute();
 
-	CommandeRobot* constructeurVirtuel(Robot& rob) {return new Tourner(rob);}
+	CommandeRobot* constructeurVirtuel(Robot& rob) {return new TournerC(rob);}
 };
 
 #endif /* TOURNER_H_ */

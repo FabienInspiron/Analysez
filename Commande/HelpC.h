@@ -10,16 +10,16 @@
 
 #include "CommandeRobot.h"
 
-class Help : public CommandeRobot{
+class HelpC : public CommandeRobot{
 public:
-	static Help instance;
+	static HelpC instance;
 
-	Help(Robot&);
-	Help(string);
+	HelpC(Robot&);
+	HelpC(string);
 
 	void execute();
 
-	CommandeRobot* constructeurVirtuel(Robot& rob) {return new Help(rob);}
+	CommandeRobot* constructeurVirtuel(Robot& rob) {return new HelpC(rob);}
 };
 
 #endif /* HELP_H_ */

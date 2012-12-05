@@ -5,16 +5,16 @@
  *      Author: belli
  */
 
-#include "Robot.h"
+#include "../Robot.h"
 #include "CommandeRobot.h"
 #include "Console.h"
-#include "Help.h"
+#include "HelpC.h"
 
-Help::Help(string s) : CommandeRobot(s) {}
+HelpC::HelpC(string s) : CommandeRobot(s) {}
 
-Help::Help(Robot& rob) : CommandeRobot(rob) {}
+HelpC::HelpC(Robot& rob) : CommandeRobot(rob) {}
 
-void Help::execute(){
+void HelpC::execute(){
 	cout << Console::getCommandes();
 	return;
 }

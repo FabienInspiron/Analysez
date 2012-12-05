@@ -5,14 +5,14 @@
  *      Author: belli
  */
 
-#include "Avancer.h"
+#include "AvancerC.h"
 #include <iostream>
 
 using namespace std;
-#include "Robot.h"
+#include "../Robot.h"
 #include "CommandeRobot.h"
 #include "Console.h"
-#include "Tourner.h"
+#include "TournerC.h"
 
 Avancer::Avancer(string s) : CommandeRobot(s) {}
 

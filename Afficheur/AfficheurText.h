@@ -10,7 +10,7 @@
 
 #include <iostream>
 #include "Afficheur.h"
-#include "Robot.h"
+#include "../Robot.h"
 using namespace std;
 
 class AfficheurText: public Afficheur {

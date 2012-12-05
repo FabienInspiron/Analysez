@@ -7,8 +7,8 @@
 #include "Objet.h"
 #include "Obstacle.h"
 #include "Position.h"
-#include "EtatR.h"
-#include "ElementARepresenter.h"
+#include "Etat/EtatR.h"
+#include "Afficheur/ElementARepresenter.h"
 #include <vector>
 
 using namespace std;

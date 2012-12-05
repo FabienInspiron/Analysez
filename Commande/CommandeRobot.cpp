@@ -7,17 +7,17 @@
 
 #include "CommandeRobot.h"
 #include <iostream>
-#include "Avancer.h"
-#include "Tourner.h"
-#include "Saisir.h"
-#include "Help.h"
+#include "AvancerC.h"
+#include "TournerC.h"
+#include "SaisirC.h"
+#include "HelpC.h"
 using namespace std;
 
 map<string, CommandeRobot*> CommandeRobot::CommandesInscrites;
 Avancer Avancer::instance("AVANCER");
-Tourner Tourner::instance("TOURNER");
-Saisir Saisir::instance("SAISIR");
-Help Help::instance("HELP");
+TournerC TournerC::instance("TOURNER");
+SaisirC SaisirC::instance("SAISIR");
+HelpC HelpC::instance("HELP");
 
 CommandeRobot* CommandeRobot::nouvelleCommandeRobot(string s, Robot& rob){
 	if(CommandeRobot::inMap(s))

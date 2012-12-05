@@ -10,15 +10,15 @@
 
 #include "CommandeRobot.h"
 
-class Saisir : public CommandeRobot{
+class SaisirC : public CommandeRobot{
 public:
-	static Saisir instance;
+	static SaisirC instance;
 
-	Saisir(Robot&);
-	Saisir(string);
+	SaisirC(Robot&);
+	SaisirC(string);
 
 	void execute();
 
-	CommandeRobot* constructeurVirtuel(Robot& rob) {return new Saisir(rob);}
+	CommandeRobot* constructeurVirtuel(Robot& rob) {return new SaisirC(rob);}
 };
 #endif /* SAISIR_H_ */

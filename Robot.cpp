@@ -1,11 +1,11 @@
 #include <iostream>
-#include "EtatR.h"
+#include "Etat/EtatR.h"
 #include "Position.h"
 #include "Obstacle.h"
 #include "Objet.h"
-#include "EtatEnRoute.h"
-#include "EtatAVide.h"
-#include "EtatFiger.h"
+#include "Etat/EtatEnRoute.h"
+#include "Etat/EtatAVide.h"
+#include "Etat/EtatFiger.h"
 
 #include "Robot.h"
 

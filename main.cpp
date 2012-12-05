@@ -1,9 +1,9 @@
 #include <iostream>
 #include "Robot.h"
-#include "AfficheurText.h"
-#include "Commande.h"
-#include "CommandeRobot.h"
-#include "Console.h"
+#include "Afficheur/AfficheurText.h"
+#include "Commande/Commande.h"
+#include "Commande/CommandeRobot.h"
+#include "Commande/Console.h"
 
 // Ajout d'un commentaire
 
