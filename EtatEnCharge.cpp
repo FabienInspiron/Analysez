@@ -23,6 +23,10 @@ void EtatEnCharge::peser(Robot* rob){
     return;
 }
 
+string EtatEnCharge::getEtat(){
+	return  EtatEnRoute::getEtat() +"/ En charge";
+}
+
 void EtatEnCharge::rencontrerObstacle(Robot* rob){
 	rob->setEtat(*EtatEnChargeFO::getInstance());
     return;

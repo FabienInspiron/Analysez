@@ -27,3 +27,7 @@ EtatEnChargeFO* EtatEnChargeFO::getInstance(){
 	if(!instance) instance = new EtatEnChargeFO;
 	return instance;
 }
+
+string EtatEnChargeFO::getEtat(){
+	return  EtatEnRoute::getEtat() +"/ En charge face à obstacle";
+}

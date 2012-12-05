@@ -9,15 +9,12 @@ class EtatEnCharge;
 class EtatEnChargeFO;
 
 class EtatEnRoute : public EtatR {
-    public :
-
+public :
 						EtatEnRoute();
-		static			EtatEnRoute*		instance;
         void        	figer(Robot*);
 
         EtatEnRoute*	getInstance();
-        string getEtat(){ return "En route";}
-
+        virtual string  getEtat(){ return "En route";}
 };
 
 #endif // ETATENROUTE_H_INCLUDED

@@ -6,14 +6,18 @@
 class Robot;
 
 class EtatAVide : public EtatEnRoute {
-	public :
+private :
+	static EtatAVide instance;
+
+public :
 		static EtatAVide* aVide;
 
 					EtatAVide();
         void    	avancer(Robot* r);
         void    	tourner(Robot* r);
         void    	rencontrerObstacle(Robot* r);
-        static EtatAVide* getInstance();
+        string 		getEtat();
+        static EtatAVide*  getInstance();
 };
 
 #endif // ETATAVIDE_H_INCLUDED

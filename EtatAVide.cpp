@@ -24,3 +24,7 @@ EtatAVide* EtatAVide::getInstance(){
 	if(!aVide) aVide = new EtatAVide();
 	return aVide;
 }
+
+string EtatAVide::getEtat(){
+	return  EtatEnRoute::getEtat() +"/ A vide";
+}

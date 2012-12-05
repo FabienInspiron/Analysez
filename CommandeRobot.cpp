@@ -19,7 +19,6 @@ Tourner Tourner::instance("TOURNER");
 Saisir Saisir::instance("SAISIR");
 Help Help::instance("HELP");
 
-
 CommandeRobot* CommandeRobot::nouvelleCommandeRobot(string s, Robot& rob){
 	if(CommandeRobot::inMap(s))
 		return CommandesInscrites[s]->constructeurVirtuel(rob);

@@ -12,6 +12,7 @@ class EtatAVideFO : public EtatEnRoute {
         void    tourner         (Robot* r);
         void    saisir          (Robot* r);
         static 	EtatAVideFO* 	getInstance		();
+        string 					getEtat();
 };
 
 #endif // ETATAVIDEFO_H_INCLUDED

@@ -12,6 +12,7 @@ class EtatEnCharge : public EtatEnRoute {
         void    peser               (Robot* r);
         void    rencontrerObstacle  (Robot* r);
         static	EtatEnCharge* getInstance	();
+        string 	getEtat();
 };
 
 #endif // ETATENCHARGE_H_INCLUDED

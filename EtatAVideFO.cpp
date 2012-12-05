@@ -25,3 +25,7 @@ EtatAVideFO* EtatAVideFO::getInstance(){
 	if(!instance) instance = new EtatAVideFO;
 	return instance;
 }
+
+string EtatAVideFO::getEtat(){
+	return  EtatEnRoute::getEtat() +"/ A vide face à obstacle";
+}
