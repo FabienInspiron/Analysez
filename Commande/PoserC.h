@@ -8,10 +8,17 @@
 #ifndef POSERC_H_
 #define POSERC_H_
 
-class PoserC {
-public:
-	PoserC();
-	virtual ~PoserC();
-};
+#include "CommandeRobot.h"
 
+class PoserC : public CommandeRobot{
+public:
+	static PoserC instance;
+
+	PoserC(Robot&);
+	PoserC(string);
+
+	void execute();
+
+	CommandeRobot* constructeurVirtuel(Robot& rob) {return new PoserC(rob);}
+};
 #endif /* POSERC_H_ */

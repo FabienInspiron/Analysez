@@ -10,6 +10,8 @@
 #include "AvancerC.h"
 #include "TournerC.h"
 #include "SaisirC.h"
+#include "PoserC.h"
+#include "PeserC.h"
 #include "HelpC.h"
 using namespace std;
 
@@ -18,6 +20,8 @@ Avancer Avancer::instance("AVANCER");
 TournerC TournerC::instance("TOURNER");
 SaisirC SaisirC::instance("SAISIR");
 HelpC HelpC::instance("HELP");
+PoserC PoserC::instance("POSER");
+PeserC PeserC::instance("PESER");
 
 CommandeRobot* CommandeRobot::nouvelleCommandeRobot(string s, Robot& rob){
 	if(CommandeRobot::inMap(s))

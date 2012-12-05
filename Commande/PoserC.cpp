@@ -6,12 +6,16 @@
  */
 
 #include "PoserC.h"
+#include "../Robot.h"
+#include "CommandeRobot.h"
+#include "Console.h"
+#include "../Objet.h"
 
-PoserC::PoserC() {
-	// TODO Auto-generated constructor stub
+PoserC::PoserC(string s) : CommandeRobot(s) {}
 
-}
+PoserC::PoserC(Robot& rob) : CommandeRobot(rob) {}
 
-PoserC::~PoserC() {
-	// TODO Auto-generated destructor stub
+void PoserC::execute(){
+	robot->poser();
+	return;
 }
