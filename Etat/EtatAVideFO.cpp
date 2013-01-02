@@ -16,6 +16,7 @@ void EtatAVideFO::saisir(Robot* rob){
 	rob->setEtat(*EtatEnChargeFO::getInstance());
     return;
 }
+
 void EtatAVideFO::tourner(Robot* rob){
 	rob->setEtat(*EtatAVide::getInstance());
     return;

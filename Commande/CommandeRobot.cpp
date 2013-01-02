@@ -13,6 +13,10 @@
 #include "PoserC.h"
 #include "PeserC.h"
 #include "HelpC.h"
+#include "EvaluerObstacleC.h"
+#include "FigerC.h"
+#include "RepartirC.h"
+
 using namespace std;
 
 map<string, CommandeRobot*> CommandeRobot::CommandesInscrites;
@@ -22,6 +26,9 @@ SaisirC SaisirC::instance("SAISIR");
 HelpC HelpC::instance("HELP");
 PoserC PoserC::instance("POSER");
 PeserC PeserC::instance("PESER");
+EvaluerObstacleC EvaluerObstacleC::instance("EVALUER_OBSTACLE");
+FigerC FigerC::instance("FIGER");
+RepartirC RepartirC::instance("REPARTIR");
 
 CommandeRobot* CommandeRobot::nouvelleCommandeRobot(string s, Robot& rob){
 	if(CommandeRobot::inMap(s))
