@@ -16,6 +16,7 @@
 #include "EvaluerObstacleC.h"
 #include "FigerC.h"
 #include "RepartirC.h"
+#include "RencontrerObstacleC.h"
 
 using namespace std;
 
@@ -29,6 +30,7 @@ PeserC PeserC::instance("PESER");
 EvaluerObstacleC EvaluerObstacleC::instance("EVALUER_OBSTACLE");
 FigerC FigerC::instance("FIGER");
 RepartirC RepartirC::instance("REPARTIR");
+RencontrerObstacleC RencontrerObstacleC::instance("RENCONTRER_OBSTACLE");
 
 CommandeRobot* CommandeRobot::nouvelleCommandeRobot(string s, Robot& rob){
 	if(CommandeRobot::inMap(s))
